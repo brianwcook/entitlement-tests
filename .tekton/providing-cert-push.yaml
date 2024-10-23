@@ -27,6 +27,10 @@ spec:
     value: Dockerfile
   - name: path-context
     value: providing-cert
+  # purposefully setting this to value that doesn't exist so that fallback to etc-pki-entitlement should be triggered.
+  - name: ACTIVATION_KEY
+    value: "my-custom-activation-key"
+
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
