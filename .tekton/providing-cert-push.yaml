@@ -31,6 +31,8 @@ spec:
   # purposefully setting this to value that doesn't exist so that fallback to etc-pki-entitlement should be triggered.
   - name: ACTIVATION_KEY
     value: "my-custom-activation-key"
+  - name: skip-checks
+    value: "true"
 
   pipelineSpec:
     description: |
