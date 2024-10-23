@@ -8,7 +8,7 @@ metadata:
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
       == "main" && ( "dockerfile-registration/***".pathChanged() || ".tekton/dockerfile-registration-pull-request.yaml".pathChanged()
-      )
+      || ".tekton/dockerfile-registration-push.yaml".pathChanged())
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: entitlement-tests
