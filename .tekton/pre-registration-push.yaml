@@ -233,7 +233,7 @@ spec:
         - name: kind
           value: task
         resolver: git
-      # taskRef:
+      # taskRef: 
       #   params:
       #   - name: name
       #     value: buildah-oci-ta
