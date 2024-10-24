@@ -31,6 +31,8 @@ spec:
     value: Dockerfile
   - name: path-context
     value: providing-cert
+  - name: ACTIVATION_KEY
+    value: does-not-exist
   - name: skip-checks
     value: "true"
   pipelineSpec:
