@@ -31,8 +31,6 @@ spec:
     value: Dockerfile
   - name: path-context
     value: dockerfile-registration
-  - name: skip-checks
-    value: "true"
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
@@ -227,24 +225,11 @@ spec:
         params:
         - name: name
           value: buildah-oci-ta
-        - name: url
-          value: https://github.com/brianwcook/build-definitions.git
-        - name: revision
-          value: pre-registration
-        - name: pathInRepo
-          value: task/buildah-oci-ta/0.2/buildah-oci-ta.yaml
+        - name: bundle
+          value: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.2@sha256:2a0c67ea7d5d82b4ec47930c12397f94b3af0b3855d8e5ad9f6e088c93e42bf0
         - name: kind
           value: task
-        resolver: git
-      # taskRef:
-      #   params:
-      #   - name: name
-      #     value: buildah-oci-ta
-      #   - name: bundle
-      #     value: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.2@sha256:2a0c67ea7d5d82b4ec47930c12397f94b3af0b3855d8e5ad9f6e088c93e42bf0
-      #   - name: kind
-      #     value: task
-      #   resolver: bundles
+        resolver: bundles
       when:
       - input: $(tasks.init.results.build)
         operator: in
