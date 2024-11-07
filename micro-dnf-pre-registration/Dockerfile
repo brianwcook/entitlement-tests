@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/ubi-micro
+FROM registry.access.redhat.com/ubi9/ubi-minimal
 
 # tests installing something that requires subscription repo
 RUN microdnf -y install golang kernel-devel
