@@ -1,2 +1,5 @@
 FROM registry.access.redhat.com/ubi8/ubi
-RUN SMDEV_CONTAINER_OFF=1 subscription-manager refresh && dnf -y install golang kernel-devel
+#subscription-manager refresh && 
+RUN dnf -y install golang kernel-devel
+RUN microdnf -y module enable nodejs:18 && \
+
