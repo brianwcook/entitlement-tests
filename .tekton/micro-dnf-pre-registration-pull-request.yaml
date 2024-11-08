@@ -226,7 +226,7 @@ spec:
         - name: name
           value: buildah-oci-ta
         - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.2@sha256:d695d2236a84321fda426f9bec962efc3a0c0ff8d929b6ac8d412d9e42e6d213
+          value: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta@sha256:d695d2236a84321fda426f9bec962efc3a0c0ff8d929b6ac8d412d9e42e6d213
         - name: kind
           value: task
         resolver: bundles
