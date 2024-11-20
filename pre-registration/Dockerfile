@@ -23,6 +23,7 @@ RUN dnf -y module enable nodejs:18 && \
     dnf -y --nodocs install nodejs kernel-devel
 RUN cat 4 > /4
 
-COPY --from=ubi8min /1 . 
-COPY --from=ubi9min /2 . 
-COPY --from=ubi8 /3 . 
+COPY --from=ubi8min /1 .
+COPY --from=ubi9min /2 .
+COPY --from=ubi8 /3 .
+COPY --from=ubi9 /4 .
