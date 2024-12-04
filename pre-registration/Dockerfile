@@ -17,12 +17,20 @@ RUN dnf -y module enable nodejs:18 && \
     dnf -y --nodocs install nodejs kernel-devel
 RUN cat 3 > /3
 
-FROM registry.access.redhat.com/ubi9/ubi as ubi9
+
+FROM registry.access.redhat.com/ubi9/ubi as ubi9.1
 # test installing + modularity
 RUN dnf -y module enable nodejs:18 && \
     dnf -y --nodocs install nodejs kernel-devel
 RUN cat 4 > /4
 
+FROM registry.access.redhat.com/ubi9/ubi as ubi9
+# test installing + modularity
+RUN dnf -y module enable nodejs:18 && \
+    dnf -y --nodocs install nodejs kernel-devel
+RUN cat 5 > /5
+
 COPY --from=ubi8min /1 .
 COPY --from=ubi9min /2 .
 COPY --from=ubi8 /3 .
+COPY --from=ubi9.1 /4 .
